@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090d">
+  <title>REWIND: The Last Decision</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Rewind home">
+      <span class="brand-mark">R</span>
+      <span>REWIND<span class="brand-sub">THE LAST DECISION</span></span>
+    </a>
+    <div class="top-status"><span class="live-dot"></span> SIMULATION ACTIVE</div>
+  </header>
+
+  <main class="app-shell">
+    <section class="intro-panel" id="introPanel">
+      <p class="eyebrow"><span class="eyebrow-line"></span> A CHOICE-DRIVEN MYSTERY</p>
+      <h1>ONE WRONG<br><span>DECISION.</span><br>INFINITE REGRET.</h1>
+      <p class="intro-copy">You have 90 seconds to uncover the truth. Read the clues. Question every choice. If everything goes wrong, rewind the timeline — but choose wisely.</p>
+      <div class="intro-meta">
+        <span><strong>01</strong> CHAPTER</span><span><strong>03</strong> LIVES</span><span><strong>∞</strong> POSSIBILITIES</span>
+      </div>
+      <button id="startButton" class="primary-button" type="button">ENTER THE GAME <span>↗</span></button>
+      <button id="continueButton" class="text-button hidden" type="button">CONTINUE SAVED GAME</button>
+      <p class="disclaimer">FICTIONAL INTERACTIVE EXPERIENCE · NO REAL-WORLD CONSEQUENCES</p>
+    </section>
+
+    <section class="game-panel hidden" id="gamePanel" aria-live="polite">
+      <div class="chapter-row">
+        <div><p class="eyebrow">CHAPTER 01 / THE LOCKED FLOOR</p><h2 id="sceneTitle">The Arrival</h2></div>
+        <div class="chapter-chip"><span class="live-dot"></span> LIVE TIMELINE</div>
+      </div>
+
+      <div class="hud">
+        <div class="hud-item"><span class="hud-label">TIME LEFT</span><strong id="timerValue">01:30</strong><div class="meter"><span id="timerMeter"></span></div></div>
+        <div class="hud-item"><span class="hud-label">LIVES</span><strong id="livesValue">♥ ♥ ♥</strong></div>
+        <div class="hud-item"><span class="hud-label">SCORE</span><strong id="scoreValue">0000</strong></div>
+      </div>
+
+      <div class="scene-card" id="sceneCard">
+        <div class="scene-art" id="sceneArt"><span class="art-index">SCENE 01</span><span class="art-symbol">◉</span><span class="art-caption">UNKNOWN LOCATION / 02:17 AM</span></div>
+        <div class="scene-content">
+          <p class="scene-kicker" id="sceneKicker">A strange beginning</p>
+          <p class="scene-description" id="sceneDescription"></p>
+          <div class="clue-box hidden" id="clueBox"><span class="clue-icon">✦</span><div><strong>CLUE DISCOVERED</strong><p id="clueText"></p></div></div>
+          <div class="puzzle-box hidden" id="puzzleBox">
+            <label for="codeInput" id="puzzleLabel">ENTER ACCESS CODE</label>
+            <div class="puzzle-entry"><input id="codeInput" type="text" inputmode="numeric" maxlength="8" placeholder="••••" autocomplete="off"><button id="submitCode" class="primary-button small" type="button">SUBMIT ↗</button></div>
+            <p class="puzzle-feedback" id="puzzleFeedback" aria-live="polite"></p>
+          </div>
+          <div class="choices" id="choices"></div>
+        </div>
+      </div>
+
+      <div class="lower-grid">
+        <section class="mini-panel">
+          <div class="panel-heading"><h3>COLLECTED CLUES</h3><span id="clueCount">0 / 3</span></div>
+          <ul id="clueList" class="clue-list"><li class="empty-state">No clues recovered yet.</li></ul>
+        </section>
+        <section class="mini-panel timeline-panel">
+          <div class="panel-heading"><h3>TIMELINE</h3><span id="eventCount">01 EVENT</span></div>
+          <div id="timelineList" class="timeline-list"><div class="timeline-event active"><span></span><p>Arrival</p></div></div>
+          <button id="rewindButton" class="rewind-button" type="button">↶ REWIND TIMELINE <span id="rewindCount">0 AVAILABLE</span></button>
+        </section>
+      </div>
+      <div class="game-footer"><span>REWIND PROTOCOL v1.0</span><button id="resetButton" class="text-button" type="button">RESET GAME</button></div>
+    </section>
+
+    <section id="endingPanel" class="ending-panel hidden" aria-live="polite">
+      <div class="ending-symbol" id="endingSymbol">◇</div>
+      <p class="eyebrow" id="endingEyebrow">TIMELINE CONCLUDED</p>
+      <h2 id="endingTitle">THE END</h2>
+      <p id="endingDescription"></p>
+      <div class="ending-stats"><div><span>FINAL SCORE</span><strong id="finalScore">0000</strong></div><div><span>CLUES FOUND</span><strong id="finalClues">0 / 3</strong></div><div><span>REWINDS USED</span><strong id="finalRewinds">0</strong></div></div>
+      <button id="endingRewindButton" class="secondary-button hidden" type="button">↶ REWIND LAST DECISION</button>
+      <button id="replayButton" class="primary-button" type="button">PLAY AGAIN <span>↻</span></button>
+    </section>
+  </main>
+  <footer class="site-footer"><span>REWIND: THE LAST DECISION</span><span>YOUR PAST IS NOT ALWAYS FIXED.</span></footer>
+</body>
+</html>
